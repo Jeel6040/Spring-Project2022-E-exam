@@ -5043,3 +5043,105 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 10:29:32.734
 !MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:47.495
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:47.506
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:47.517
+!MESSAGE buffering callback sts4.classpath.MWMOhKqG timetracking-22-java false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:47.525
+!MESSAGE executing callback sts4.classpath.MWMOhKqG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:47.570
+!MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:48.256
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:48.267
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:48.277
+!MESSAGE buffering callback sts4.classpath.MWMOhKqG timetracking-22-java false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:48.280
+!MESSAGE executing callback sts4.classpath.MWMOhKqG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:41:48.309
+!MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-03-28 12:42:00.901
+!MESSAGE Project facet wst.jsdt.web has not been defined. It is used in plugin org.eclipse.jst.server.core.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-03-28 12:42:00.904
+!MESSAGE Project facet wst.jsdt.web has not been defined. It is used in plugin org.eclipse.jst.server.preview.adapter.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-03-28 12:42:00.908
+!MESSAGE Project facet wst.jsdt.web has not been defined. It is used in plugin org.eclipse.jst.server.tomcat.core.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-03-28 12:42:00.911
+!MESSAGE Project facet wst.jsdt.web has not been defined. It is used in plugin org.eclipse.wst.server.http.core.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-03-28 12:42:00.914
+!MESSAGE Project facet wst.jsdt.web has not been defined. It is used in plugin org.eclipse.wst.server.preview.adapter.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.213
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.221
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.230
+!MESSAGE buffering callback sts4.classpath.MWMOhKqG timetracking-22-java false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.234
+!MESSAGE executing callback sts4.classpath.MWMOhKqG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.268
+!MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.323
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.332
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.343
+!MESSAGE buffering callback sts4.classpath.MWMOhKqG timetracking-22-java false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.347
+!MESSAGE executing callback sts4.classpath.MWMOhKqG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.382
+!MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.388
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.399
+!MESSAGE classpath=84 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.412
+!MESSAGE buffering callback sts4.classpath.MWMOhKqG timetracking-22-java false 84
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.415
+!MESSAGE executing callback sts4.classpath.MWMOhKqG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:01.440
+!MESSAGE executing callback sts4.classpath.MWMOhKqG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:42.494
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.MWMOhKqG
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:42.498
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.MWMOhKqG
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:42.501
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-03-28 12:42:42.504
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.MWMOhKqG => OK

@@ -45,6 +45,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\jeel1\Documents\workspace-spring-tool-suite-4-4.13.1.RELEASE\timetracking-22-java"/>
 			<item value="C:\Users\jeel1\Downloads\timetracking-22-java-master"/>
 			<item value="D:\Royal tech\E-Exam program.zip"/>
 			<item value="C:\Users\jeel1\Documents\GitHub\SpringDemo"/>
