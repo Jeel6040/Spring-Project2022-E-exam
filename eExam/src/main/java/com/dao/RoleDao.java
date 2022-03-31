@@ -16,7 +16,7 @@ public class RoleDao {
 		JdbcTemplate stmt;
 
 		public void insertRole(RoleBean role) {
-			System.out.println(stmt);
+			
 			stmt.update("insert into roles (rolename) values (?)", role.getRoleName());
 		}
 

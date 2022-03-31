@@ -26,11 +26,7 @@ public class RoleController {
 
 	@PostMapping("/saverole")
 	public String saveRole(RoleBean role) {
-		System.out.println(role.getRoleName());
-
 		roleDao.insertRole(role);
-		System.out.println("insert done...");
-
 		return "redirect:/listroles";// url
 	}
 
@@ -44,10 +40,8 @@ public class RoleController {
 
 	@GetMapping("/deleterole/{roleId}")
 	public String deleteRole(@PathVariable("roleId") int roleId) {
-		System.out.println("deleteRole()");
-
+		
 		roleDao.deleteRole(roleId);
-
 		return "redirect:/listroles";
 	}
 
@@ -57,7 +51,6 @@ public class RoleController {
 		RoleBean role = roleDao.getRoleById(roleId);
 		model.addAttribute("role", role);
 		return "EditRole";
-
 	}
 
 	@PostMapping("/updaterole")

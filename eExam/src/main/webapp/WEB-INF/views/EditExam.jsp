@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="savebadge" method="post">
-		Badge : <input type="text" name="badge"><br><br>
-		<input type="submit" value="SaveBadge">
-	</form>
+
 </body>
 </html>

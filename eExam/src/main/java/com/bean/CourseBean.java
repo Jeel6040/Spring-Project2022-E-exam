@@ -6,6 +6,7 @@ public class CourseBean {
 	private String courseName;
 	private String description;
 	private int isActive;
+	
 	public int getCourseId() {
 		return courseId;
 	}
@@ -31,5 +32,4 @@ public class CourseBean {
 		this.isActive = isActive;
 	}
 	
-
 }

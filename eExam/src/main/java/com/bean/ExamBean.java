@@ -4,7 +4,7 @@ public class ExamBean {
 	
 	private int examId;
 	private int courseId;
-	private String title;
+	private String examName;
 	private String description;
 	private int marksPerQuestion;
 	private String isActive;
@@ -21,12 +21,6 @@ public class ExamBean {
 	}
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
 	}
 	public String getDescription() {
 		return description;
@@ -51,6 +45,12 @@ public class ExamBean {
 	}
 	public void setTotalNumOfQuestions(int totalNumOfQuestions) {
 		this.totalNumOfQuestions = totalNumOfQuestions;
+	}
+	public String getExamName() {
+		return examName;
+	}
+	public void setExamName(String examName) {
+		this.examName = examName;
 	}
 
 }

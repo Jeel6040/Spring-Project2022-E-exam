@@ -90,9 +90,9 @@
 
 
 					</div>
-					<!-- pcoded wrapper -->
+					<!-- pcoded-wrapper -->
 				</div>
-				<!-- pcoded main container -->
+				<!-- pcoded-main-container -->
 			</div>
 			<!-- pcoded-navwrap -->
 		</div>
@@ -107,5 +107,6 @@
 				$('#listRoles').DataTable();
 			});
 		</script>
+</div>
 </body>
 </html>
