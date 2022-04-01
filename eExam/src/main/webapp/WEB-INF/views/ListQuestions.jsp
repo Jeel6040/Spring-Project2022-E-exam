@@ -12,13 +12,13 @@
 
 	<table border="1">
 		<tr>
-			<td>QuestionId</td>
-			<td>Question</td>
-			<td>CorrectAns</td>
-			<td>Option1</td>
-			<td>Option2</td>
-			<td>Option3</td>
-			<td>Option4</td>
+			<th>QuestionId</th>
+			<th>Question</th>
+			<th>CorrectAns</th>
+			<th>Option1</th>
+			<th>Option2</th>
+			<th>Option3</th>
+			<th>Option4</th>
 		</tr>
 
 		<c:forEach items="${questions}" var="q">
@@ -30,6 +30,8 @@
 				<td>${q.option2}</td>
 				<td>${q.option3}</td>
 				<td>${q.option4}</td>
+				<td><a href="deletequestion?questionId=${q.questionId}">Delete</a> 
+					| <a href="editquestion?questionId=${q.questionId}">Edit</a></td>
 			</tr>
 		</c:forEach>
 

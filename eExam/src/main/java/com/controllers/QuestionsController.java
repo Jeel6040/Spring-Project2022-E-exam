@@ -54,4 +54,10 @@ public class QuestionsController {
 		questionsDao.updateQuestion(question);
 		return "redirect:/listquestions";
 	}
+	@GetMapping("/listquestions")
+	public String listQuestions(Model model) {
+		List<QuestionsBean> question = questionsDao.getAllQuestions();
+		model.addAttribute("question", question);
+		return "ListQuestions";
+	}
 }

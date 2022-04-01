@@ -12,12 +12,12 @@
 
 	<table border="1">
 		<tr>
-			<td>ExamId</td>
-			<td>ExamName</td>
-			<td>Description</td>
-			<td>MarksPerQuestion</td>
-			<td>TotalNoOfQuestions</td>
-			<td>ExamActive</td>
+			<th>ExamId</th>
+			<th>ExamName</th>
+			<th>Description</th>
+			<th>MarksPerQuestion</th>
+			<th>TotalNoOfQuestions</th>
+			<th>ExamActive</th>
 		</tr>
 
 		<c:forEach items="${exam}" var="e">
@@ -28,6 +28,8 @@
 				<td>${e.marksperquestion}</td>
 				<td>${e.totalnoofquestions}</td>
 				<td>${e.examactive}</td>
+				<td><a href="deleteexam?examId=${e.examId}">Delete</a> 
+					| <a href="editexam?examId=${e.examId}">Edit</a></td>
 			</tr>
 		</c:forEach>
 

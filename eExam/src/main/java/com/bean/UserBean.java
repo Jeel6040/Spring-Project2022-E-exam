@@ -7,8 +7,8 @@ public class UserBean {
 	private String password;
 	private String firstName;
 	private String lastName;
-	private int roleId; 
-	private String roleName;
+	private int roleId; // 
+	private String roleName;//not in table 
 	private int contactNo;
 	private String gender;
 	

@@ -12,10 +12,10 @@
 
 	<table border="1">
 		<tr>
-			<td>CourseId</td>
-			<td>CourseName</td>
-			<td>IsActive</td>
-			<td>Description</td>
+			<th>CourseId</th>
+			<th>CourseName</th>
+			<th>IsActive</th>
+			<th>Description</th>
 			
 		</tr>
 
@@ -25,7 +25,8 @@
 				<td>${c.courseName}</td>
 				<td>${c.isActive}</td>
 				<td>${c.description}</td>
-				
+				<td><a href="deletecourse?courseId=${c.courseId}">Delete</a>    
+			    	| <a href="editcourse?courseId=${c.courseId}">Edit</a></td>
 			</tr>
 		</c:forEach>
 

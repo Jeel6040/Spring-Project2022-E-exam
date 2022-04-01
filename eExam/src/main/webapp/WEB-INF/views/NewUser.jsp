@@ -25,8 +25,8 @@
 	Role : <select name="roleId">
 				<option>---Select Role---</option>
 				
-				<c:forEach items="${roles}" var="r">
-					<option value="${r.roleid}">${r.rolename}</option>
+				<c:forEach items="${role}" var="r">
+					<option value="${r.roleId}">${r.roleName}</option>
 				</c:forEach>
 			</select><br><br>
 			<input type="submit" value="Add User"/>
