@@ -5,7 +5,7 @@ public class CourseBean {
 	private int courseId;
 	private String courseName;
 	private String description;
-	private int isActive;
+	private int courseActive;
 	
 	public int getCourseId() {
 		return courseId;
@@ -25,11 +25,11 @@ public class CourseBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getIsActive() {
-		return isActive;
+	public int getCourseActive() {
+		return courseActive;
 	}
-	public void setIsActive(int isActive) {
-		this.isActive = isActive;
+	public void setCourseActive(int courseActive) {
+		this.courseActive = courseActive;
 	}
 	
 }

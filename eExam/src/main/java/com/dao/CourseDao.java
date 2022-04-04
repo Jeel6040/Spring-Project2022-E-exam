@@ -16,8 +16,8 @@ public class CourseDao {
 	JdbcTemplate stmt;
 
 	public void addCourse(CourseBean course) {
-		stmt.update("insert into course (coursename,isactive,description) values (?,?,?) ", course.getCourseName(),
-				course.getIsActive(), course.getDescription());
+		stmt.update("insert into course (coursename,courseactive,description) values (?,?,?) ", course.getCourseName(),
+				course.getCourseActive(), course.getDescription());
 	}
 
 	public List<CourseBean> getAllCourse() {
@@ -38,6 +38,7 @@ public class CourseDao {
 	}
 
 	public void updateCourse(CourseBean course) {
-		stmt.update("update course set coursename = ? where courseid = ? ", course.getCourseName(), course.getCourseId());
+		stmt.update("update course set coursename = ?, description=?, courseactive=? where courseid = ? ", course.getCourseName(), 
+				course.getDescription(), course.getCourseActive(), course.getCourseId());
 	}
 }

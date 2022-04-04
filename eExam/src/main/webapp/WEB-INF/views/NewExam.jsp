@@ -16,8 +16,8 @@
 		<label for="exam active">Exam Active : </label> 
 			<select name="examactive" id="examactive">
 			<option value="choose" selected disabled hidden="choose">Choose Here</option>
-			<option value="yes">Yes</option>
-			<option value="no">No</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
 		</select><br>
 		
 		<input type="submit" value="Add Course" />

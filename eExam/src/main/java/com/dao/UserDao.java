@@ -47,4 +47,16 @@ public class UserDao {
 	// userid = ?
 	// ",user.getFirstName(),user.getLastName(),user.getGender(),user.getUserId());
 
+	public UserBean getUserByEmail(String email) {
+		// TODO Auto-generated method stub
+		UserBean user = stmt.queryForObject("select * from users where email = ?",
+				 new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] {email});
+		return user;
+	}
+
+	public void updatePassword(UserBean user) {
+		// TODO Auto-generated method stub
+		stmt.update("update users set password = ? where email = ?", user.getPassword(), user.getEmail());
+	}
+
 }

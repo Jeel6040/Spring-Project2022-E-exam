@@ -14,8 +14,8 @@
 		<br> <label for="course active">Course Active : </label> 
 			<select name="courseactive" id="courseactive">
 			<option value="choose" selected disabled hidden="choose">Choose Here</option>
-			<option value="yes">Yes</option>
-			<option value="no">No</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
 		</select><br>
 		Description : <input type="text" name="description"/><br>
 		<br> <input type="submit" value="Add Course" />

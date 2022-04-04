@@ -16,8 +16,8 @@ public class QuestionsDao {
 	JdbcTemplate stmt;
 
 	public void addQuestion(QuestionsBean question) {
-		stmt.update("insert into questions (question,correctans,option1,option2,option3,option4) values (?,?,?,?,?,?) ", question.getQuestion(), 
-				question.getCorrectAns(), question.getOption1(), question.getOption2(), question.getOption3(), question.getOption4());
+		stmt.update("insert into questions (courseid,question,option1,option2,option3,option4,correctans) values (?,?,?,?,?,?,?) ", question.getQuestion(), 
+				question.getOption1(), question.getOption2(), question.getOption3(), question.getOption4(), question.getCorrectAns());
 	}
 
 	public List<QuestionsBean> getAllQuestions() {

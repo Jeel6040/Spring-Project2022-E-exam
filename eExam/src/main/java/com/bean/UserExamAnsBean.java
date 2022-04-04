@@ -7,7 +7,14 @@ public class UserExamAnsBean {
 	private int userId;
 	private int examId;
 	private int questionId;
+	private String ansStatus;
 	
+	public String getAnsStatus() {
+		return ansStatus;
+	}
+	public void setAnsStatus(String ansStatus) {
+		this.ansStatus = ansStatus;
+	}
 	public String getUserExamAns() {
 		return userExamAns;
 	}

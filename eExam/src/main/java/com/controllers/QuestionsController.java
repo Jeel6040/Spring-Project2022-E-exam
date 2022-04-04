@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.QuestionsBean;
+import com.dao.CourseDao;
 import com.dao.QuestionsDao;
 
 @Controller
@@ -18,9 +19,12 @@ public class QuestionsController {
 	
 	@Autowired
 	QuestionsDao questionsDao;
+	@Autowired
+	CourseDao courseDao;
 	
 	@GetMapping("/newquestion")
-	public String newQuestion() {
+	public String newQuestion(Model model) {
+		model.addAttribute("course",courseDao.getAllCourse()); 
 		return "NewQuestion";
 	}
 	@PostMapping("/savequestion")

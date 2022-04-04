@@ -18,13 +18,13 @@ public class UserController {
 	
 	@Autowired
 	UserDao userDao;
-	@Autowired
+	@Autowired	
 	RoleDao roleDao;
 	
 	@GetMapping("/newuser")
 	public String newUser(Model model) {
 		model.addAttribute("role",roleDao.getAllRoles()); 
-		return "NewUser";
+		return "NewUser";  
 	}
 	@PostMapping("/saveuser")
 	public String saveUser(UserBean user) {

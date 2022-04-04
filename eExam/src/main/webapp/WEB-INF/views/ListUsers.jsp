@@ -9,6 +9,9 @@
 </head>
 <body>
 	<h2>List Users</h2>
+	<div>
+	<a href="login" > Login </a>
+	</div>
 
 	<table border="1">
 

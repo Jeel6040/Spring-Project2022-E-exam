@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.CourseBean;
-import com.bean.RoleBean;
 import com.dao.CourseDao;
 
 @Controller
@@ -21,13 +20,20 @@ public class CourseController {
 	CourseDao courseDao;
 	
 	@GetMapping("/newcourse")
-	public String newCourse() {
+	public String newCourse(Model model) {
+		model.addAttribute("course",courseDao.getAllCourse()); 
 		return "NewCourse";
 	}
 	@PostMapping("/savecourse")
 	public String saveCourse(CourseBean course) {
 		courseDao.addCourse(course);
-		return "redirect:/getallcourse";
+		return "redirect:/listcourse";
+	}
+	@GetMapping("/getallcourse")
+	public String getAllCourse(Model model) {
+		List<CourseBean> course = courseDao.getAllCourse();
+		model.addAttribute("course", course);
+		return "ListCourse";
 	}
 	@GetMapping("/listcourse")
 	public String listCourse(Model model) {

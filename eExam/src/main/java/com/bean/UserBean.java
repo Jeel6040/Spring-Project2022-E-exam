@@ -67,5 +67,9 @@ public class UserBean {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
+	public int getOtp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }

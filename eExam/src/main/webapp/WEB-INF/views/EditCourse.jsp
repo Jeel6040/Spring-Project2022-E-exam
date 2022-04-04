@@ -10,8 +10,8 @@
 	<form action="updatecourse" method="post" >
 		<input type="hidden" value="${course.courseId}" name="courseId"/>
 		
-		CourseName : <input type="text" name="courseName" value="${course.firstName }"/><br><br>
-		Description : <input type="text" name="description" value="${course.lastName }"/><br><br>
+		CourseName : <input type="text" name="courseName" value="${course.courseName }"/><br><br>
+		Description : <input type="text" name="description" value="${course.description }"/><br><br>
 		<label for="course active">Course Active : </label> 
 			<select name="courseactive" id="courseactive">
 				<option value="choose" selected disabled hidden="choose">Choose Here</option>
