@@ -17,8 +17,8 @@ public class ExamDao {
 	
 	public void insertExam(ExamBean exam) {
 		// TODO Auto-generated method stub
-		stmt.update("inset into exam (examname, description, marksperquestion, totalnumofquestions, isactive) value = (?,?,?,?,?)", 
-				exam.getExamName(), exam.getDescription(), exam.getMarksPerQuestion(), exam.getTotalNumOfQuestions(), exam.getIsActive());
+		stmt.update("insert into exam (courseid,examname,description,marksperquestion,totalnumofquestions,examactive) values (?,?,?,?,?,?)", 
+				exam.getCourseId(), exam.getExamName(), exam.getDescription(), exam.getMarksPerQuestion(), exam.getTotalNumOfQuestions(), exam.getExamActive());
 	}
 
 	public List<ExamBean> getAllExam() {
@@ -41,8 +41,8 @@ public class ExamDao {
 
 	public void updateExam(ExamBean exam) {
 		// TODO Auto-generated method stub
-		stmt.update("update exam set examname=?, isactive=?, description=?, marksperquestion=?, totalnumofquestions=? where examid = ?",
-				exam.getExamName(), exam.getIsActive(), exam.getDescription(), exam.getMarksPerQuestion(), 
+		stmt.update("update exam set examname=?, examactive=?, description=?, marksperquestion=?, totalnumofquestions=? where examid = ?",
+				exam.getExamName(), exam.getExamActive(), exam.getDescription(), exam.getMarksPerQuestion(), 
 				exam.getTotalNumOfQuestions(), exam.getExamId());
 	}
 	

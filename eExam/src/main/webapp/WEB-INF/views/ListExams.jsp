@@ -22,14 +22,16 @@
 
 		<c:forEach items="${exam}" var="e">
 			<tr>
-				<td>${e.examid}</td>
-				<td>${e.examname}</td>
+				<td>${e.examId}</td>
+				<td>${e.examName}</td>
 				<td>${e.description}</td>
-				<td>${e.marksperquestion}</td>
-				<td>${e.totalnoofquestions}</td>
-				<td>${e.examactive}</td>
+				<td>${e.marksPerQuestion}</td>
+				<td>${e.totalNumOfQuestions}</td>
+				<td>${e.examActive}</td>
 				<td><a href="deleteexam?examId=${e.examId}">Delete</a> 
-					| <a href="editexam?examId=${e.examId}">Edit</a></td>
+					| <a href="editexam?examId=${e.examId}">Edit</a>
+					| <a href="examdetails?examId=${e.examId}">Start Exam</a>
+				</td>
 			</tr>
 		</c:forEach>
 

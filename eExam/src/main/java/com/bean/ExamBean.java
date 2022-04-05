@@ -7,7 +7,7 @@ public class ExamBean {
 	private String examName;
 	private String description;
 	private int marksPerQuestion;
-	private String isActive;
+	private String examActive;
 	private int totalNumOfQuestions;
 	
 	public int getExamId() {
@@ -34,11 +34,11 @@ public class ExamBean {
 	public void setMarksPerQuestion(int marksPerQuestion) {
 		this.marksPerQuestion = marksPerQuestion;
 	}
-	public String getIsActive() {
-		return isActive;
+	public String getExamActive() {
+		return examActive;
 	}
-	public void setIsActive(String isActive) {
-		this.isActive = isActive;
+	public void setExamActive(String examActive) {
+		this.examActive = examActive;
 	}
 	public int getTotalNumOfQuestions() {
 		return totalNumOfQuestions;
