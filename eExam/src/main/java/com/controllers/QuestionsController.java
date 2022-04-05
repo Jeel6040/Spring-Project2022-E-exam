@@ -35,6 +35,7 @@ public class QuestionsController {
 	@GetMapping("/getallquestions")
 	public String getAllQuestions(Model model) {
 		List<QuestionsBean> question = questionsDao.getAllQuestions();
+		System.out.println(question.size());
 		model.addAttribute("question", question);
 		return "ListQuestions";
 	}
