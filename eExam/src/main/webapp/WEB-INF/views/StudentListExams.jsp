@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Exam List</title>
+<title>Students ListExams</title>
 </head>
 <body>
-	<h2>Exam List</h2>
-
 	${error }
 	<table border="1">
 		<tr>
@@ -29,10 +27,7 @@
 				<td>${e.marksPerQuestion}</td>
 				<td>${e.totalNumOfQuestions}</td>
 				<td>${e.examActive}</td>
-				<td><a href="deleteexam?examId=${e.examId}">Delete</a> 
-					| <a href="editexam?examId=${e.examId}">Edit</a>
-					| <a href="examdetails?examId=${e.examId}">View Exam</a>
-					| <a href="generatequestion?examId=${e.examId}">GenerateQuestion</a>
+				<td><a href="studentexamdetails?examId=${e.examId}">Start Exam</a>
 				</td>
 			</tr>
 		</c:forEach>

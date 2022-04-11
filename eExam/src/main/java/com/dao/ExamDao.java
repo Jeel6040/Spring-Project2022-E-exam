@@ -20,7 +20,7 @@ public class ExamDao {
 		stmt.update("insert into exam (courseid,examname,description,marksperquestion,totalnumofquestions,examactive) values (?,?,?,?,?,?)", 
 				exam.getCourseId(), exam.getExamName(), exam.getDescription(), exam.getMarksPerQuestion(), exam.getTotalNumOfQuestions(), exam.getExamActive());
 	}
-
+	
 	public List<ExamBean> getAllExam() {
 		// TODO Auto-generated method stub
 		List<ExamBean> exam = stmt.query("select * from exam", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
@@ -38,12 +38,16 @@ public class ExamDao {
 				new BeanPropertyRowMapper<ExamBean>(ExamBean.class), new Object[] { examId });
 		return exam;
 	}
-
+	public List<ExamBean> getExamByActiveExam(int examActive) {
+		// TODO Auto-generated method stub
+		List<ExamBean> examactive = stmt.query("select * from exam where examactive=1", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
+		return examactive;
+	}
+	
 	public void updateExam(ExamBean exam) {
 		// TODO Auto-generated method stub
 		stmt.update("update exam set examname=?, examactive=?, description=?, marksperquestion=?, totalnumofquestions=? where examid = ?",
 				exam.getExamName(), exam.getExamActive(), exam.getDescription(), exam.getMarksPerQuestion(), 
 				exam.getTotalNumOfQuestions(), exam.getExamId());
 	}
-	
 }

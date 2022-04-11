@@ -17,7 +17,9 @@ public class UserExamAnsDao {
 	
 	public void adduserans(UserExamAnsBean userexamans) {
 		// TODO Auto-generated method stub
-		stmt.update("insert into userexamans (userans) values (?)", userexamans.getUserExamAns());
+		stmt.update("insert into userexamans (userans,userid,questionid,examid) values (?,?,?,?) ", userexamans.getUserAns(), 
+				 userexamans.getUserId(), userexamans.getQuestionId(), userexamans.getExamId());
+		System.out.println("done...");
 	}
 
 	public List<UserExamAnsBean> getAllUserExamAns() {
@@ -39,7 +41,7 @@ public class UserExamAnsDao {
 
 	public void updateUserExamAns(UserExamAnsBean userexamans) {
 		// TODO Auto-generated method stub
-		stmt.update("update usereamans set userans=? where userexamansid=?", userexamans.getUserExamAns(), userexamans.getUserExamAnsId());
+		stmt.update("update usereamans set userans=? where userexamansid=?", userexamans.getUserAns(), userexamans.getUserExamAnsId());
 	}
 
 }

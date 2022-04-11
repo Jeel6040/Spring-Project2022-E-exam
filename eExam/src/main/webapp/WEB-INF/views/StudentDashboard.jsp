@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<a href="listexams">ListExams</a><br><br> 
+		<a href="studentlistexams">ListExams</a><br><br> 
 	</div>
 </body>
 </html>

@@ -2,12 +2,15 @@ package com.bean;
 
 public class UserExamAnsBean {
 
-	private String userExamAns;
+	private String userAns;
 	private int userExamAnsId;
 	private int userId;
 	private int examId;
 	private int questionId;
 	private String ansStatus;
+	
+	public UserExamAnsBean() {
+	}
 	
 	public String getAnsStatus() {
 		return ansStatus;
@@ -15,11 +18,11 @@ public class UserExamAnsBean {
 	public void setAnsStatus(String ansStatus) {
 		this.ansStatus = ansStatus;
 	}
-	public String getUserExamAns() {
-		return userExamAns;
+	public String getUserAns() {
+		return userAns;
 	}
-	public void setUserExamAns(String userExamAns) {
-		this.userExamAns = userExamAns;
+	public void setUserAns(String userAns) {
+		this.userAns = userAns;
 	}
 	public int getUserExamAnsId() {
 		return userExamAnsId;
