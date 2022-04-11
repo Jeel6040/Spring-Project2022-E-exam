@@ -27,7 +27,6 @@ public class UserExamAnsController {
 	}
 
 
-
 	@GetMapping("/getalluserexamans")
 	public String getAllUserExamAns(Model model) {
 		List<UserExamAnsBean> userexamans = userExamAnsDao.getAllUserExamAns();

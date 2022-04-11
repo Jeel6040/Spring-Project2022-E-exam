@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.bean.ExamBean;
+import com.bean.UserExamAnsBean;
 
 @Repository
 public class ExamDao {
@@ -38,9 +39,16 @@ public class ExamDao {
 				new BeanPropertyRowMapper<ExamBean>(ExamBean.class), new Object[] { examId });
 		return exam;
 	}
+	//exam active
 	public List<ExamBean> getExamByActiveExam(int examActive) {
 		// TODO Auto-generated method stub
 		List<ExamBean> examactive = stmt.query("select * from exam where examactive=1", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
+		return examactive;
+	}
+	//exam completed
+	public List<ExamBean> getExamByExamComplete(int examActive) {
+		// TODO Auto-generated method stub
+		List<ExamBean> examactive = stmt.query("select * from exam where examactive=2", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
 		return examactive;
 	}
 	
@@ -49,5 +57,10 @@ public class ExamDao {
 		stmt.update("update exam set examname=?, examactive=?, description=?, marksperquestion=?, totalnumofquestions=? where examid = ?",
 				exam.getExamName(), exam.getExamActive(), exam.getDescription(), exam.getMarksPerQuestion(), 
 				exam.getTotalNumOfQuestions(), exam.getExamId());
+	}
+
+	public void updateUserExamAnsStatus(UserExamAnsBean userexamans) {
+		// TODO Auto-generated method stub
+		stmt.update("update userexamans set ansstatus=? where userexamansid=?", userexamans.getAnsStatus(), userexamans.getUserExamAnsId());
 	}
 }

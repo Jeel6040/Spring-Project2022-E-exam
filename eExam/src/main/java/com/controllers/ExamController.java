@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.bean.ExamBean;
 import com.bean.QuestionsBean;
 import com.bean.UserBean;
+import com.bean.UserExamAnsBean;
 import com.dao.CourseDao;
 import com.dao.ExamDao;
 import com.dao.ExamQuestionDao;
@@ -161,5 +162,34 @@ public class ExamController {
 		}
 
 	}
-
+	
+	@GetMapping("/resultlist")
+	public String resultList(@RequestParam("examId") int examId, Model model) {
+		List<ExamBean> exam = examDao.getExamByExamComplete(2);
+		model.addAttribute("exam", exam);
+		return "ResultList";
+	}
+	
+	@GetMapping("/examresult")
+	public String examResult(@RequestParam("examId") int examId, Model model) {
+		ExamBean exam = examDao.getExamById(examId);
+		model.addAttribute("exam", exam);
+		return "ExamResult";
+	}
+	
+	@PostMapping("/resultstatus")
+	public String resultStatus(ExamBean exam, QuestionsBean question, UserExamAnsBean userexamans) {
+		examDao.updateUserExamAnsStatus(userexamans);
+		
+		/*
+		 * if (correctAns = option1) { ansStatus = 1
+		 * 
+		 * } else if (correctAns = option2) {
+		 * 
+		 * } else if (correctAns = option3) {
+		 * 
+		 * } else (ansStatus = 1
+		 */
+		return "redirect:/examresult";
+	}
 }

@@ -8,9 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student Exam Details</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<table border="1">
@@ -43,17 +41,11 @@
 
 			<fieldset id="group1">
 				<br>Question : ${q.question} <br> <br> <input
-					type="hidden" value="${q.questionId}" name="question<%=i%>">
-				Option1: <input type="radio" name="userAns<%=i%>"
-					value="${q.option1 }"><label id="option1">
-					${q.option1 }</label><br> <br> Option2: <input type="radio"
-					name="userAns<%=i%>" value="${q.option2 }"><label
-					id="option2"> ${q.option2 }</label><br> <br>
-				Option3: <input type="radio" name="userAns<%=i%>"
-					value="${q.option3 }"><label id="option3">
-					${q.option3 }</label><br> <br> Option4: <input type="radio"
-					name="userAns<%=i%>" value="${q.option4 }"><label
-					id="option4"> ${q.option4 }</label><br> <br>
+					type="hidden" value="${q.questionId}" name="question<%=i%>"> 
+					Option1: <input type="radio" name="userAns<%=i%>" value="${q.option1 }"><label id="option1">${q.option1 }</label><br> <br> 
+					Option2: <input type="radio" name="userAns<%=i%>" value="${q.option2 }"><label id="option2"> ${q.option2 }</label><br> <br> 
+					Option3: <input type="radio" name="userAns<%=i%>" value="${q.option3 }"><label id="option3"> ${q.option3 }</label><br> <br> 
+					Option4: <input type="radio" name="userAns<%=i%>" value="${q.option4 }"><label id="option4"> ${q.option4 }</label><br> <br>
 			</fieldset>
 			<%
 			i++;
@@ -98,8 +90,7 @@
 						$.ajax({
 							url : "saveuserexamans",
 							type : "post",
-							data : ua
-							,
+							data : ua,
 							success : function(data, textStatus, jqXHR) {
 								//data - response from server
 								console.log(data);
@@ -112,7 +103,7 @@
 					}
 				}
 			}//main loop 
- 		}
+		}
 	</script>
 </body>
 </html>
