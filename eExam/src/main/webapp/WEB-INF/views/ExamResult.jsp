@@ -33,16 +33,18 @@
 	</table>
 
 	<div>		
-		<c:forEach items="${question}" var="q">
-
-				<br>Question : ${q.question}<br> <br>
-					Option1:  ${q.option1 }<br> <br> 
-					Option2:  ${q.option2 }<br> <br> 
-					Option3:  ${q.option3 }<br> <br> 
-					Option4:  ${q.option4 }<br> <br>
-					Your Answer: "${userexamans.userAns}?questionId=${userexamans.questionId }"<br><br>
-					Correct Answer: ${q.correctAns }<br><br>				
-			
+		<c:forEach items="${userexamans}" var="q">
+				
+				<fieldset id="group1">
+				<br>Question : ${q.quest.question}<br> <br>
+					Option1:  ${q.quest.option1 }<br> <br> 
+					Option2:  ${q.quest.option2 }<br> <br> 
+					Option3:  ${q.quest.option3 }<br> <br> 
+					Option4:  ${q.quest.option4 }<br> <br>
+					Your Answer: ${q.userAns}<br><br>
+					Correct Answer: ${q.quest.correctAns }<br><br>				
+				
+				</fieldset>
 		</c:forEach>
 
 	</div>

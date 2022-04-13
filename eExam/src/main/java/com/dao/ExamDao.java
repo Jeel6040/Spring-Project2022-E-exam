@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.ExamBean;
 import com.bean.UserExamAnsBean;
+import com.bean.UserExamBean;
 
 @Repository
 public class ExamDao {
@@ -39,18 +40,19 @@ public class ExamDao {
 				new BeanPropertyRowMapper<ExamBean>(ExamBean.class), new Object[] { examId });
 		return exam;
 	}
+	
 	//exam active
 	public List<ExamBean> getExamByActiveExam(int examActive) {
 		// TODO Auto-generated method stub
 		List<ExamBean> examactive = stmt.query("select * from exam where examactive=1", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
 		return examactive;
 	}
-	//exam completed
-	public List<ExamBean> getExamByExamComplete(int examActive) {
+	public List<ExamBean> getExamByInactiveExam(int examActive) {
 		// TODO Auto-generated method stub
-		List<ExamBean> examactive = stmt.query("select * from exam where examactive=2", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
+		List<ExamBean> examactive = stmt.query("select * from exam where examactive=0", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
 		return examactive;
 	}
+	
 	
 	public void updateExam(ExamBean exam) {
 		// TODO Auto-generated method stub
@@ -62,5 +64,31 @@ public class ExamDao {
 	public void updateUserExamAnsStatus(UserExamAnsBean userexamans) {
 		// TODO Auto-generated method stub
 		stmt.update("update userexamans set ansstatus=? where userexamansid=?", userexamans.getAnsStatus(), userexamans.getUserExamAnsId());
+	}
+
+	/*
+	 * public List<UserExamAnsBean> getUserExamAnsByQuestionId(int questionId) { //
+	 * TODO Auto-generated method stub List<UserExamAnsBean> userexamans = stmt.
+	 * query("select q.*, u.userAns from questions q , userexamans u where q.questionid=u.questionid and q.questionid=?"
+	 * , new BeanPropertyRowMapper<UserExamAnsBean>(UserExamAnsBean.class), new
+	 * Object[] {questionId}); return userexamans; }
+	 */
+	public List<UserExamAnsBean> getUserExamAnsByQuestionId(int examId) {
+		// TODO Auto-generated method stub
+		List<UserExamAnsBean> userexamans = stmt.query("select * from userexamans where examid = ?", 
+				new BeanPropertyRowMapper<UserExamAnsBean>(UserExamAnsBean.class), new Object[] { examId });
+		return userexamans;
+	}
+
+	public void insertUserExam(UserExamBean userExam) {
+		// TODO Auto-generated method stub
+		stmt.update("insert into userexam (examid,userid,status) values (?,?,'Started')", 
+				 userExam.getExamId(), userExam.getUserId());
+	
+	}
+
+	public void updateExamInactive(ExamBean exam) {
+		// TODO Auto-generated method stub
+		stmt.update("update exam set examactive=0 where examid=?", exam.getExamId());
 	}
 }

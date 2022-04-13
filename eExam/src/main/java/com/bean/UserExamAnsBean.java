@@ -9,6 +9,19 @@ public class UserExamAnsBean {
 	private int questionId;
 	private String ansStatus;
 	
+	
+	
+	QuestionsBean quest; 
+	
+	
+	public QuestionsBean getQuest() {
+		return quest;
+	}
+
+	public void setQuest(QuestionsBean quest) {
+		this.quest = quest;
+	}
+
 	public UserExamAnsBean() {
 	}
 	

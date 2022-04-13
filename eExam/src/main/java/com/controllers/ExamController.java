@@ -17,10 +17,12 @@ import com.bean.ExamBean;
 import com.bean.QuestionsBean;
 import com.bean.UserBean;
 import com.bean.UserExamAnsBean;
+import com.bean.UserExamBean;
 import com.dao.CourseDao;
 import com.dao.ExamDao;
 import com.dao.ExamQuestionDao;
 import com.dao.QuestionsDao;
+import com.dao.UserExamAnsDao;
 
 @Controller
 public class ExamController {
@@ -31,6 +33,8 @@ public class ExamController {
 	CourseDao courseDao;
 	@Autowired
 	QuestionsDao questionDao;
+	@Autowired
+	UserExamAnsDao userExamAnsDao;
 
 	@Autowired
 	ExamQuestionDao examQuestionDao;
@@ -98,8 +102,11 @@ public class ExamController {
 	
 	//start exam 
 	@GetMapping("/studentexamdetails")
-	public String studentExamDetails(@RequestParam("examId") int examId, Model model,HttpSession session) {
+	public String studentExamDetails(@RequestParam("examId") int examId,UserExamBean userExam, Model model,HttpSession session) {
 		ExamBean exam = examDao.getExamById(examId);
+		examDao.insertUserExam(userExam);
+		examDao.updateExamInactive(exam);
+		
 		UserBean user = (UserBean)session.getAttribute("user");
 		if(user == null) {
 			user = new UserBean();
@@ -132,7 +139,12 @@ public class ExamController {
 		int courseId = exam.getCourseId();//10 java 
 		int totalQuestion = exam.getTotalNumOfQuestions(); // 5
 		int questionId = 0;
-		
+		List<QuestionsBean>  qs=	examQuestionDao.getAllQuestionsByExam(examId);
+		if(qs.size()!=0) {
+			model.addAttribute("error","Questions Already Generated!!");
+			model.addAttribute("exam", examDao.getAllExam());
+			return "ListExams";
+		}
 		List<QuestionsBean> questions = questionDao.getAllQuestionsByCourse(courseId);// 10 java , 10 total question 
 
 		if (questions.size() >= totalQuestion) {
@@ -164,16 +176,44 @@ public class ExamController {
 	}
 	
 	@GetMapping("/resultlist")
-	public String resultList(@RequestParam("examId") int examId, Model model) {
-		List<ExamBean> exam = examDao.getExamByExamComplete(2);
+	public String resultList( Model model) {
+		List<ExamBean> exam = examDao.getExamByInactiveExam(0);
 		model.addAttribute("exam", exam);
 		return "ResultList";
 	}
 	
 	@GetMapping("/examresult")
-	public String examResult(@RequestParam("examId") int examId, Model model) {
+	public String examResult(@RequestParam("examId") int examId, UserExamBean userExam, Model model) {
 		ExamBean exam = examDao.getExamById(examId);
+		List<QuestionsBean> question = examQuestionDao.getAllQuestionsByExam(exam.getExamId());
+		List<UserExamAnsBean> userexamans = examDao.getUserExamAnsByQuestionId(examId);
+		System.out.println(question.size());
+		System.out.println(userexamans.size());
+		for(int i=0;i<userexamans.size();i++) {
+			userexamans.get(i).setQuest(question.get(i));
+		}
+		
+		int totalCorrect = 0;
+		for(int i=0;i<question.size();i++) {
+			if(question.get(i).getCorrectAns().equals(userexamans.get(0).getUserAns())){
+				//dao -> examid question anstatus 1 
+				userExamAnsDao.updateCorrectAns();
+				totalCorrect++; 
+			}else {
+				//dao exam id questiondi anstatsus 0 
+				userExamAnsDao.updateWrongAns();
+			}
+		}
+		int obtainMarks = ( totalCorrect*exam.getMarksPerQuestion());
+		//dao-> userexam -> update --> examid obtainmarks = (totalCorrect*exam.getMarksPerQuestion()) 
+		userExamAnsDao.updateMarks(userExam);
+		//later 
+		//userexam list ->  select e.*,u.* from exam e,userexam u where u.userid = 12 
+		
+		
 		model.addAttribute("exam", exam);
+		model.addAttribute("question",question);
+		model.addAttribute("userexamans", userexamans);
 		return "ExamResult";
 	}
 	

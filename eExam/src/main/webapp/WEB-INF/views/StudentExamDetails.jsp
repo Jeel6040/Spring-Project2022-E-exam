@@ -103,6 +103,8 @@
 					}
 				}
 			}//main loop 
+			
+			alert("exam submited please view result");
 		}
 	</script>
 </body>

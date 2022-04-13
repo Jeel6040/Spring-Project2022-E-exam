@@ -23,7 +23,7 @@ public class UserAnsRest {
 //		System.out.println(userexamans.size());
 		System.out.println(userexamans);
 		System.out.println(userexamans.getUserAns());
-		userExamAnsDao.adduserans(userexamans);
+		userExamAnsDao.adduserAns(userexamans);
 		System.out.println("====");
 		return "done";
 

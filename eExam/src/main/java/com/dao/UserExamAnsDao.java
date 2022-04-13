@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.bean.UserExamAnsBean;
+import com.bean.UserExamBean;
 
 @Repository
 public class UserExamAnsDao {
@@ -15,7 +16,7 @@ public class UserExamAnsDao {
 	@Autowired
 	JdbcTemplate stmt;
 	
-	public void adduserans(UserExamAnsBean userexamans) {
+	public void adduserAns(UserExamAnsBean userexamans) {
 		// TODO Auto-generated method stub
 		stmt.update("insert into userexamans (userans,userid,questionid,examid) values (?,?,?,?) ", userexamans.getUserAns(), 
 				 userexamans.getUserId(), userexamans.getQuestionId(), userexamans.getExamId());
@@ -43,5 +44,20 @@ public class UserExamAnsDao {
 		// TODO Auto-generated method stub
 		stmt.update("update usereamans set userans=? where userexamansid=?", userexamans.getUserAns(), userexamans.getUserExamAnsId());
 	}
+
+	public void updateCorrectAns() {
+		// TODO Auto-generated method stub
+		stmt.update("update userexamans set ansstatus=1");
+	}
+
+	public void updateWrongAns() {
+		// TODO Auto-generated method stub
+		stmt.update("update userexamans set ansstatus=0");
+	}
+
+	
+	 public void updateMarks(UserExamBean userExam) { // TODO Auto-generated method stub stmt.
+	 stmt.update("update userexam set obtainmarks = ? where examid=?", userExam.getObtainMarks(), userExam.getExamId());
+	 }
 
 }
