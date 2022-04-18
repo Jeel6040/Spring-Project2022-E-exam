@@ -86,7 +86,7 @@
 							"userId" : userId
 						}
 						userAns.push(ua);
-
+						console.log(ua);
 						$.ajax({
 							url : "saveuserexamans",
 							type : "post",
@@ -104,8 +104,16 @@
 				}
 			}//main loop 
 			
+			$.ajax({
+				url:"generateFinalResult?examId="+examId,
+				type:"get",
+				success:function(data){
+					
+				}
+			});
 			alert("exam submited please view result");
-		}
+			window.location="/resultlist";
+ 		}//save ans 
 	</script>
 </body>
 </html>

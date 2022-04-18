@@ -52,7 +52,12 @@ public class ExamDao {
 		List<ExamBean> examactive = stmt.query("select * from exam where examactive=0", new BeanPropertyRowMapper<ExamBean>(ExamBean.class));
 		return examactive;
 	}
-	
+	//exam active and student not taken 
+		public List<ExamBean> getExamByActiveExamForStudent(int userId) {
+			// TODO Auto-generated method stub
+			List<ExamBean> examactive = stmt.query("select * from exam where examactive = 1 and examid not in (select examid from userexam where userid = ? )", new BeanPropertyRowMapper<ExamBean>(ExamBean.class),new Object[] {userId});
+			return examactive;
+		}
 	
 	public void updateExam(ExamBean exam) {
 		// TODO Auto-generated method stub
@@ -90,5 +95,12 @@ public class ExamDao {
 	public void updateExamInactive(ExamBean exam) {
 		// TODO Auto-generated method stub
 		stmt.update("update exam set examactive=0 where examid=?", exam.getExamId());
+	}
+
+
+	public List<UserExamBean> getExamResultByUser(int userId) {
+		// TODO Auto-generated method stub
+		List<UserExamBean> examactive = stmt.query("select e.*, ue.status,ue.obtainmarks from exam e , userexam ue where ue.userid = ? and ue.examid = e.examid", new BeanPropertyRowMapper<UserExamBean>(UserExamBean.class),new Object[] {userId});
+		return examactive;
 	}
 }

@@ -16,7 +16,8 @@
 			<th>Description</th>
 			<th>MarksPerQuestion</th>
 			<th>TotalNoOfQuestions</th>
-			<th>ExamActive</th>
+			<th>ObtainMarsk</th>
+			<th>Action</th>
 		</tr>
 
 		<c:forEach items="${exam}" var="e">
@@ -26,8 +27,8 @@
 				<td>${e.description}</td>
 				<td>${e.marksPerQuestion}</td>
 				<td>${e.totalNumOfQuestions}</td>
-				<td>${e.examActive}</td>
-				<td><a href="examresult?examId=${e.examId}">View Result</a></td>
+				<td>${e.obtainMarks}</td>
+				<td><a href="examresult?examId=${e.examId}">ViewAns</a></td>
 			</tr>
 		</c:forEach>
 
