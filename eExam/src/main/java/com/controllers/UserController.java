@@ -23,6 +23,8 @@ public class UserController {
 	
 	@GetMapping("/newuser")
 	public String newUser(Model model) {
+		List<UserBean> users = userDao.getAllUsers();
+		model.addAttribute("users", users);
 		model.addAttribute("role",roleDao.getAllRoles()); 
 		return "NewUser";  
 	}

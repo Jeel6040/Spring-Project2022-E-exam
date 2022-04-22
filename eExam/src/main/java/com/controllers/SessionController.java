@@ -69,22 +69,30 @@ public class SessionController {
 		
 	}
 	@RequestMapping(value = "forgetpassword", method = RequestMethod.GET)
+	public String forgetPassword() {
+		return "ForgetPassword";
+
+	}
+
+	@PostMapping("/forgetpassword")
 	public String forgetPassword(UserBean user, Model model, HttpSession session) {
 		UserBean dbUser = userDao.getUserByEmail(user.getEmail());
-		
+
 		if (dbUser == null) {
 			model.addAttribute("error", "Please Enter Valid Email");
 			return "ForgetPassword";
+
 		} else {
-			int otp = (int) (Math.random() * 1000000);
+			int otp = (int) (Math.random() * 1000000); // 0325842.15621 * 1000000
 			session.setAttribute("otp", otp);
 			session.setAttribute("email", user.getEmail());
-			model.addAttribute("msg", "Otp is Generated and Sent to your Email");
+			model.addAttribute("msg", "Otp is generated and sent to your email!!!");
 			System.out.println("your otp is => " + otp);
 			/// send email to user
 			emailService.sendEmailForForgetPassword(user.getEmail(), otp+"");
 			return "NewPassword";
 		}
+
 	}
 //	@RequestMapping(value = "signup" , method = RequestMethod.POST)
 	@GetMapping("/signup")

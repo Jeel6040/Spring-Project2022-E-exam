@@ -5,7 +5,7 @@
 <head>
 
 <title>Student Dashboard</title>
-<jsp:include page="AllCss.jsp"></jsp:include>
+<jsp:include page="AllCss2.jsp"></jsp:include>
 </head>
 
 <body themebg-pattern="theme1">
@@ -41,7 +41,7 @@
 									<div class="page-header-title">
 										<i class="feather icon-home bg-c-blue"></i>
 										<div class="d-inline">
-											<h5>Welcome, ${s.studentName }</h5>
+											<h5>Welcome, ${user.firstName }</h5>
 											
 										</div>
 									</div>
@@ -49,7 +49,7 @@
 								<div class="col-lg-4">
 									<div class="page-header-breadcrumb">
 										<ul class=" breadcrumb breadcrumb-title">
-											<li class="breadcrumb-item"><a href="studentdashboard?studentId=${s.studentId }"><i
+											<li class="breadcrumb-item"><a href="studentdashboard?userId=${user.userId }"><i
 													class="feather icon-home"></i></a></li>
 											<li class="breadcrumb-item"><a href="#!">Dashboard
 													</a></li>
@@ -72,7 +72,7 @@
 														<div class="row align-items-center m-b-30">
 															<div class="col">
 																<h6 class="m-b-5 text-white">Total Appeared Exam</h6>
-																<h3 class="m-b-0 f-w-700 text-white">0</h3>
+																<h3 class="m-b-0 f-w-700 text-white">1</h3>
 															</div>
 															<div class="col-auto">
 																<i class="fas fa-database text-c-blue f-18"></i>
@@ -88,7 +88,7 @@
 														<div class="row align-items-center m-b-30">
 															<div class="col">
 																<h6 class="m-b-5 text-white">Total Passed Exam</h6>
-																<h3 class="m-b-0 f-w-700 text-white">0</h3>
+																<h3 class="m-b-0 f-w-700 text-white">1</h3>
 															</div>
 															<div class="col-auto">
 																<i class="fas fa-database text-c-green f-18"></i>
@@ -120,7 +120,7 @@
 														<div class="row align-items-center m-b-30">
 															<div class="col">
 																<h6 class="m-b-5 text-white">Total Active Exam</h6>
-																<h3 class="m-b-0 f-w-700 text-white">0</h3>
+																<h3 class="m-b-0 f-w-700 text-white">1</h3>
 															</div>
 															<div class="col-auto">
 																<i class="fas fa-database text-c-yellow f-18"></i>
@@ -176,12 +176,12 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logoutstudent">Logout</a>
+                    <a class="btn btn-primary" href="login">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-<jsp:include page="AllJs.jsp"></jsp:include>
+<jsp:include page="AllJs2.jsp"></jsp:include>
 
 
 </body>

@@ -1,112 +1,140 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <%@ page import = "java.io.*,java.util.*,javax.servlet.*" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>List Roles</title>
-<jsp:include page="AllCss.jsp"></jsp:include>
+    <script data-ad-client="ca-pub-4529508631166774" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Role List</title>
+
+    <jsp:include page="AllCss.jsp"></jsp:include>
 </head>
 
-<body>
-	<div id="pcoded" class="pcoded iscollapsed">
-		<div class="pcoded-overlay-box"></div>
-		<div class="pcoded-container navbar-wrapper">
-		
+<body id="page-top">
 
-			<div class="pcoded-main-container">
-				<div class="pcoded-wrapper">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+<jsp:include page="AdminSideBar.jsp"></jsp:include>
+               <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-					
+            <!-- Main Content -->
+            <div id="content">
+<jsp:include page="AdminHeader.jsp"></jsp:include>
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                   
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Role Management</h1>
+<p class="alert-danger">${error }</p>
+<p class="alert-success">${success }</p>
+                    <!-- DataTales Example -->
+                    <span id="message"></span>
+                    
+                    
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                        
+                        	<div class="row">
+                            	<div class="col">
+                            		<h6 class="m-0 font-weight-bold text-primary">Role List</h6>
+                            	</div>
+                            	
+                            	
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="subjecttable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr role="row">
+											<th>RoleId</th>
+											<th>RoleName</th>
+											<th>Action</th>
+										</tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${roles}" var="role">
+											<tr>
+												<td>${role.roleId}</td>
+												<td>${role.roleName}</td>
+												<td><a href="deleterole/${role.roleId}">Delete</a>
+													| <a href="editrole?roleId=${role.roleId}">Edit</a>
+												</td>
+											</tr>
+										</c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="pcoded-content">
+                                </div>
+                <!-- /.container-fluid -->
 
-						
-						<div class="pcoded-inner-content">
+            </div>
+            <!-- End of Main Content -->
 
-							<div class="main-body">
-								<div class="page-wrapper">
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; E-exam 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
-									<div class="page-body">
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="card">
-													<div class="card-header">
-														<h5>Default Ordering</h5>
+        </div>
+        <!-- End of Content Wrapper -->
 
-													</div>
-													<div class="card-block">
-														<div class="dt-responsive table-responsive">
-															<div id="order-table_wrapper"
-																class="dataTables_wrapper dt-bootstrap4">
-																<div class="row">
-																	<div class="col-xs-12 col-sm-12">
-																		<table border="1" "listRoles" class="table table-striped">
-																			<thead>
-																				<tr role="row">
-																					<th>RoleId</th>
-																					<th>RoleName</th>
-																					<th>Action</th>
-																				</tr>
-																			</thead>
-																			<tbody>
+    </div>
+    <!-- End of Page Wrapper -->
 
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-																				<c:forEach items="${roles}" var="role">
-																					<tr>
-																						<td>${role.roleId}</td>
-																						<td>${role.roleName}</td>
-																						<td><a href="deleterole/${role.roleId}">Delete</a>
-																							| <a href="editrole?roleId=${role.roleId}">Edit</a>
-																						</td>
-																					</tr>
-																				</c:forEach>
-
-
-
-																			</tbody>
-
-																		</table>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-
-
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div id="styleSelector"></div>
-							</div>
-						</div>
-
-
-					</div>
-					<!-- pcoded-wrapper -->
-				</div>
-				<!-- pcoded-main-container -->
-			</div>
-			<!-- pcoded-navwrap -->
-		</div>
-		<!--  pcoded -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">�</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <jsp:include page="AllJs.jsp"></jsp:include>
+     <!-- Modal -->
 
 
 
-		<jsp:include page="AllJs.jsp"></jsp:include>
 
-		<script type="text/javascript">
+<script type="text/javascript">
 			$(document).ready(function() {
-				$('#listRoles').DataTable();
+				$('#subjecttable').DataTable();
 			});
 		</script>
-</div>
 </body>
+
 </html>

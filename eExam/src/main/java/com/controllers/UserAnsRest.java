@@ -32,13 +32,10 @@ public class UserAnsRest {
 	@Autowired
 	ExamQuestionDao examQuestionDao;
 
-//	@PostMapping("/saveuserexamans",c)
-//	@RequestMapping(value = "/saveuserexamans",method = RequestMethod.GET,produces = "application/json")
+	
 	@RequestMapping(value = "/saveuserexamans", method = RequestMethod.POST, produces = "application/json")
 	public String saveUserExamAns(UserExamAnsBean userexamans) {
-//		userExamAnsDao.adduserans(userexamans);
 		System.out.println("======");
-//		System.out.println(userexamans.size());
 		System.out.println(userexamans);
 		System.out.println(userexamans.getUserAns());
 		userExamAnsDao.adduserAns(userexamans);

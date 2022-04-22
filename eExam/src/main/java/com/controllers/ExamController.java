@@ -41,6 +41,8 @@ public class ExamController {
 
 	@GetMapping("/newexam")
 	public String newExam(Model model) {
+		List<ExamBean> exam = examDao.getAllExam();
+		model.addAttribute("exam", exam);
 		model.addAttribute("course", courseDao.getAllCourse());
 		return "NewExam";
 	}
@@ -205,15 +207,6 @@ public class ExamController {
 	public String resultStatus(ExamBean exam, QuestionsBean question, UserExamAnsBean userexamans) {
 		examDao.updateUserExamAnsStatus(userexamans);
 
-		/*
-		 * if (correctAns = option1) { ansStatus = 1
-		 * 
-		 * } else if (correctAns = option2) {
-		 * 
-		 * } else if (correctAns = option3) {
-		 * 
-		 * } else (ansStatus = 1
-		 */
 		return "redirect:/examresult";
 	}
 }

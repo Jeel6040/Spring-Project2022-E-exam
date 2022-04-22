@@ -2,9 +2,9 @@
 				header-theme="themelight1" pcoded-header-position="fixed">
 				<div class="navbar-wrapper">
 					<div class="navbar-logo" logo-theme="theme6">
-						<a href="studentdashboard?studentId=${s.studentId }">
+						<a href="studentdashboard?userId=${user.userId }">
 			
-							Testkiller
+							E-exam
 
 						</a> <a class="mobile-menu" id="mobile-collapse" href="#!"> <i
 							class="feather icon-menu icon-toggle-right"></i>
@@ -41,14 +41,14 @@
 									<div class="dropdown-toggle" data-toggle="dropdown"
 										aria-expanded="false">
 										<img src="jpg/dummyuser.jpg" class="img-radius"
-											alt=""> <span>${s.studentName}</span> <i
+											alt=""> <span>${user.firstName}</span> <i
 											class="feather icon-chevron-down"></i>
 									</div>
 									<ul
 										class="show-notification profile-notification dropdown-menu"
 										data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 										
-										<li><a href="studentprofile?studentId=${s.studentId }"> <i class="feather icon-user"></i>
+										<li><a href="studentprofile?userId=${user.userId }"> <i class="feather icon-user"></i>
 												Profile
 										</a></li>
 										

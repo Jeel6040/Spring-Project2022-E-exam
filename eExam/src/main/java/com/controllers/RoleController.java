@@ -20,7 +20,9 @@ public class RoleController {
 	RoleDao roleDao;
 
 	@GetMapping("/newrole")
-	public String newRole() {
+	public String newRole(Model model) {
+		List<RoleBean> roles = roleDao.getAllRoles();
+		model.addAttribute("roles", roles);
 		return "NewRole";// jsp
 	}
 
