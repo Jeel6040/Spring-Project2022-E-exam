@@ -28,6 +28,7 @@ public class StudentController {
 		
 		model.addAttribute("user", user);
 		session.setAttribute("user", user);
+		
 		return "StudentProfile";
 	}
 	

@@ -48,12 +48,16 @@ public class SessionController {
 		boolean isCorrect=false;
 		UserBean dbUser = userDao.getUserByEmail(user.getEmail());
 		if (dbUser != null) {
+			if (user.getPassword().equals(dbUser.getPassword())) {
+				isCorrect = true;
 			
-			isCorrect = true;
+			
 			session.setAttribute("user", dbUser);
+			}
 		}
 		if (isCorrect == true) {
 			if (dbUser.getRoleId() == 1) {
+				
 				//Admin Login
 				return "redirect:/admindashboard";
 			} else if (dbUser.getRoleId() == 2) {

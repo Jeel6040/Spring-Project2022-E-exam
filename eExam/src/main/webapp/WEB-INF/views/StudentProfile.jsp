@@ -43,24 +43,24 @@
 											<th>ContactNo</th>
 											<th>Gender</th>
 											<th>Password</th>
-											<th>RoleId</th>
+											<th>Action</th>
 											
 										</tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach items="${users}" var="u">
+                                       <%--  <c:forEach items="${users}" var="u"> --%>
 											<tr>
-												<td>${u.userId}</td>
-												<td>${u.firstName}</td>
-												<td>${u.lastName}</td>
-												<td>${u.email}</td>
-												<td>${u.contactNo}</td>
-												<td>${u.gender}</td>
-												<td>${u.password}</td>
-												<td>${u.roleName}</td>
+												<td>${user.userId}</td>
+												<td>${user.firstName}</td>
+												<td>${user.lastName}</td>
+												<td>${user.email}</td>
+												<td>${user.contactNo}</td>
+												<td>${user.gender}</td>
+												<td>${user.password}</td>
+												<td><a href="edituser?userId=${user.userId}">Edit</a></td>
 												
 											</tr>
-										</c:forEach>
+										<%-- </c:forEach> --%>
                                     </tbody>
                                 </table>
                             </div>
