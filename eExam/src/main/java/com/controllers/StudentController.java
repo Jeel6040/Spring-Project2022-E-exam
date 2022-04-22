@@ -25,6 +25,7 @@ public class StudentController {
 	@GetMapping("/studentprofile")
 	public String studentProfile(@RequestParam("userId") int userId,Model model,HttpSession session) {
 		UserBean user = userDao.getUserById(userId);
+		
 		model.addAttribute("user", user);
 		session.setAttribute("user", user);
 		return "StudentProfile";

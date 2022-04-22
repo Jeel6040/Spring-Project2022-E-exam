@@ -32,32 +32,38 @@
 				
 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                   <div> 
-                    	<table border="1">
-							<tr>
-								<th>UserId</th>
-								<th>FirstName</th>
-								<th>Email</th>
-							    <th>Password</th>
-							    <th>Gender</th>
-							    <th>Contact No</th>
-								<th>RoleName</th>
-								<th>Action</th>
-							</tr>
-					
-							<c:forEach items="${users}" var="u">
-								<tr>
-									<td>${u.userId}</td>
-									<td>${u.firstName}</td>
-									<td>${u.email}</td>
-									<td>${u.password}</td>
-									<td>${u.gender }</td>
-									<td>${u.contactNo }</td>
-									<td>${u.roleName}</td>
-									<td><a href="edituser/${u.userId}">Edit</a></td>
-								</tr>
-							</c:forEach>
-                   </div>
+                     <div class="table-responsive">
+                                <table class="table table-bordered" id="subjecttable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+											<th>UserId</th>
+											<th>FirstName</th>
+											<th>LastName</th>
+											<th>Email</th>
+											<th>ContactNo</th>
+											<th>Gender</th>
+											<th>Password</th>
+											<th>RoleId</th>
+											
+										</tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach items="${users}" var="u">
+											<tr>
+												<td>${u.userId}</td>
+												<td>${u.firstName}</td>
+												<td>${u.lastName}</td>
+												<td>${u.email}</td>
+												<td>${u.contactNo}</td>
+												<td>${u.gender}</td>
+												<td>${u.password}</td>
+												<td>${u.roleName}</td>
+												
+											</tr>
+										</c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
                     
 </div>
  <!-- Logout Modal-->
